@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+      html {
+        font-size: 16px;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        background-color: #444;
+        font-family: 'Open Sans', sans-serif;
+        position: relative;
+      }
+      a {
+        text-decoration: none;
+        width: 100%;
+      }
+      .wrapper {
+        width: 100%;
+        position: relative;
+        text-align: center;
+        color: #fff;
+        overflow: hidden;
+      }
+      .wrapper__top {
+        background: #c6001a;
+        padding: 10px 15px;
+        font-size: 1.1rem;
+        color: #fff;
+      }
+      .wrapper__content {
+        padding: 10px 15px;
+      }
+      h1 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        line-height: 1.1;
+        text-transform: uppercase;
+      }
+      .offerText {
+        font-size: 1.2rem;
+        line-height: 1.2;
+        font-weight: 400;
+        width: 100%;
+      }
+      .offerText_special {
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+      .offerText p {
+        margin-bottom: 5px;
+      }
+      .offerText p:last-child {
+        margin-bottom: 0;
+      }
+      .offerText b {
+        font-weight: 700;
+      }
+      .offerText span {
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      button {
+        background: #109d58;
+        color: #fff;
+        border: none;
+        font-weight: 600;
+        padding: 10px 35px;
+        font-size: 1.1rem;
+        margin: 0 auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        position: relative;
+        cursor: pointer;
+        text-transform: uppercase;
+        -webkit-border-radius: 5px;
+                border-radius: 5px;
+        text-align: center;
+      }
+      .wheelWrapper {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        margin: 10px auto;
+        width: 75%;
+      }
+      .wheelWrapper .wheel {
+        width: 100%;
+      }
+      .wheelWrapper .wheelCenter {
+        position: absolute;
+        width: 65px;
+        margin-top: -7px;
+      }
+      .rotate1 {
+        -webkit-animation: rotate1 ease 1s forwards;
+                animation: rotate1 ease 1s forwards;
+      }
+      @-webkit-keyframes rotate1 {
+        100% {
+          -webkit-transform: rotate(810deg);
+                  transform: rotate(810deg);
+        }
+      }
+      @keyframes rotate1 {
+        100% {
+          -webkit-transform: rotate(810deg);
+                  transform: rotate(810deg);
+        }
+      }
+      .rotate2 {
+        -webkit-animation: rotate2 ease 1s forwards;
+                animation: rotate2 ease 1s forwards;
+      }
+      @-webkit-keyframes rotate2 {
+        100% {
+          -webkit-transform: rotate(765deg);
+                  transform: rotate(765deg);
+        }
+      }
+      @keyframes rotate2 {
+        100% {
+          -webkit-transform: rotate(765deg);
+                  transform: rotate(765deg);
+        }
+      }
+      .win {
+        background-image: url(img/fm112.gif);
+        background-position: center;
+        -webkit-background-size: cover;
+                background-size: cover;
+      }
+      .win .offerText {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 5px;
+        width: 100%;
+      }
+      .wrapper__win {
+        display: none;
+      }
+      .wheelWrapper_rightside {
+        display: none;
+      }
+      #onceMore__text,
+      #win__text {
+        display: none;
+      }
+      /*************** media queries start ***********/
+      @media only screen and (max-width: 320px) {
+        html {
+          font-size: 13px;
+        }
+        .wheelWrapper {
+          width: 80%;
+        }
+        .wheelWrapper .wheelCenter {
+          width: 60px;
+        }
+      }
+      @media screen and (max-width: 768px) and (orientation: landscape) {
+        .wheelWrapper_leftside {
+          display: none;
+        }
+        .wheelWrapper_rightside {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+        }
+        .wrapper__top,
+        .wrapper__content {
+          padding: 5px;
+        }
+        h1 {
+          font-size: 1.2rem;
+        }
+        .wrapper__content {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+        }
+        .leftside {
+          width: 55%;
+          margin-right: 10px;
+          -webkit-align-self: center;
+              -ms-flex-item-align: center;
+                  align-self: center;
+        }
+        .rightside {
+          width: 45%;
+          margin-left: 10px;
+          -webkit-align-self: center;
+              -ms-flex-item-align: center;
+                  align-self: center;
+        }
+        .wheelWrapper {
+          width: 80%;
+        }
+        .wheelWrapper .wheelCenter {
+          width: 60px;
+        }
+        .offerText_special {
+          font-size: 1.5rem;
+        }
+      }
+      @media screen and (max-width: 480px) and (orientation: landscape) {
+        html {
+          font-size: 13px;
+        }
+        .wheelWrapper .wheelCenter {
+          width: 50px;
+        }
+      }
+      /*************** media queries end ***********/
+
+    </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="wrapper__top">
+      <h1>Congratulation!</h1>
+      <p>You have been chosen for today's special reward!</p>
+    </div>
+    <div class="wrapper__content">
+      <div class="leftside">
+        <div class="offerText offerText_special">
+          <p id="start__text">Spin the wheel to pick your reward!</p>
+          <p id="onceMore__text">You're lucky! Try once more!</p>
+          <p id="win__text">Wow! You won $1000!</p>
+        </div>
+        <div class="wheelWrapper wheelWrapper_leftside">
+          <img src="img/wheel.svg" class="wheel">
+          <img src="img/spinCenter.svg" class="wheelCenter">
+        </div>
+        <div class="wrapper__win">
+          <div class="offerText">
+            <p>Press the button below to get your prize!</p>
+            <a href="#"><button>Get my prize!</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="rightside">
+        <div class="wheelWrapper wheelWrapper_rightside">
+          <img src="img/wheel.svg" class="wheel">
+          <img src="img/spinCenter.svg" class="wheelCenter">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+'use strict';
+function wrapperAddEventListener (wrapper1) {
+  var startText = document.getElementById('start__text');
+  var onceMoreText = document.getElementById('onceMore__text');
+  var winText = document.getElementById('win__text');
+  var wrapperWin = document.getElementsByClassName('wrapper__win').item(0);
+  var clickCounter = 0;
+  var delay = 1000;
+  var wheelImg = wrapper1.getElementsByClassName('wheel').item(0);
+
+  wrapper1.addEventListener('click', function () {
+    clickCounter += 1;
+    switch(clickCounter) {
+      case 1:
+        {
+          wheelImg.classList.add('rotate1');
+          setTimeout(function () {
+            startText.textContent = onceMoreText.textContent;
+          }, delay);
+          break;
+        }
+      case 2:
+        {
+          wheelImg.classList.remove('rotate1');
+          wheelImg.classList.add('rotate2');
+          setTimeout(function () {
+            startText.textContent = winText.textContent;
+            document.body.classList.add('win');
+            wrapperWin.style.display = 'block';
+          }, delay);
+          break;
+        }
+    }
+  });
+}
+
+var wheelWrappers = document.getElementsByClassName('wheelWrapper');
+
+for (let wrapper of wheelWrappers) {
+  wrapperAddEventListener(wrapper);
+}
+</script>
+
+</html>
